@@ -31,7 +31,16 @@ Create Table Student
   last_name varchar(20) not null,
   address varchar(60) not null,
   major numeric(5) not null foreign key references Department(d_id),
-  minor numeric(5) foreign key references Department(d_id)
+);
+
+-- Create Minor Major Table
+
+Create Table Minor_Major
+(
+
+  stu_id numeric(10) not null foreign key references Student(cwid),
+  minor_major_id numeric(5) not null foreign key references Department(d_id)
+  
 );
 
 -- Create table Department
@@ -48,12 +57,19 @@ Create Table Department
 -- Create table Course
 Create Table Course
 (
-  c_id numeric(10) not null primary key,
+  c_id varchar(10) not null primary key,
   title varchar(50) not null,
   textbook varchar(60) not null,
   units int not null,
   d_id numeric(5) not null foreign key references Department(d_id)
 
+);
+
+-- create table Prerequisite
+Create Table Prerequisite
+(
+  c_id varchar(10) not null foreign key references Course(c_id),
+  pre_course_id varchar(10) foreign key references Course(c_id)
 );
 
 -- create table Section
@@ -62,11 +78,11 @@ Create Table Section
   s_id numeric(5) not null primary key,
   class_room varchar(10) not null,
   amount_of_seat int not null,
-  meeting_day varchar(10) not null,
-  beginning_day varchar(10) not null,
-  ending_day varchar(10) not null,
+  meeting_day varchar(20) not null,
+  beginning_day varchar(20) not null,
+  ending_day varchar(20) not null,
   prof_id numeric(9) not null foreign key references Professor(ssn),
-  c_id numeric(10) not null foreign key references Course(c_id)
+  c_id varchar(10) not null foreign key references Course(c_id)
 );
 
 -- create table Enrollment
@@ -75,11 +91,4 @@ Create Table Enrollment
   grade enum('A','A-','B+','B','B-','C+','C','C-','D+','D','D-','F') not null,
   s_id not null foreign key references Section(s_id),
   stu_id not null foreign key references Student(cwid)
-);
-
--- create table Prerequisite
-Create Table Prerequisite
-(
-  c_id numeric(10) not null foreign key references Course(c_id),
-  pre_course_id numeric(10) foreign key references Course(c_id)
 );
