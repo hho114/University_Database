@@ -57,132 +57,34 @@ Values
 
 
 -- Insert 8 Students
-Insert Into Student(cwid,first_name, last_name,address,major,minor)
+Insert Into Student(cwid,first_name, last_name,address,major)
 Values
-();
+(123456789,"Alex","Ho","234 S Harmon st, Santa Ana, CA 92703", 12345 ),
+(234567891,"John","Smith","123 N Kingkong st, Fullerton, CA 92831", 12345 ),
+(345678912,"Julia","Coco","456 N BTS Ave, Westminter, CA 92704", 12345 ),
+(456789123,"Bryan","Paul","234 S Harbor Blvd, Santa Ana, CA 92704", 12345 ),
+(567891234,"Jay","Son","567 S Harmon st, Fullerton, CA 92831", 12345 ),
+(678912345,"Kai","Nguyen","4801 W First st, Santa Ana, CA 92703", 67890 ),
+(789123456,"Linda","Kathy","433 S Harmon st, Fullerton, CA 92831", 67890 ),
+(891234567,"Laura","Kimmy","897 W Century st, Costa Mesa, CA 92704", 67890 );
 
 
--- TO DO
+-- Insert Minor_Major
+Insert Into Minor_Major(stu_id,minor_major_id)
+Values
+(123456789,67890),
+(234567891,67890),
+(345678912,67890),
+(456789123,67890),
+(789123456,12345),
+(891234567,12345);
 
-/* CS Minors */
-INSERT INTO MINORS(Minor_Dept, Minor_Student_CWID)
-VALUES (98765, 3579514879);
-
-INSERT INTO MINORS(Minor_Dept, Minor_Student_CWID)
-VALUES (98765, 7890286981);
-
-INSERT INTO MINORS(Minor_Dept, Minor_Student_CWID)
-VALUES (98765, 2486309715);
-
-INSERT INTO MINORS(Minor_Dept, Minor_Student_CWID)
-VALUES (98765, 7093214568);
-
-/* ECP Minors */
-INSERT INTO MINORS(Minor_Dept, Minor_Student_CWID)
-VALUES (12345, 1837492844);
-
-INSERT INTO MINORS(Minor_Dept, Minor_Student_CWID)
-VALUES (12345, 9872589514);
-
-INSERT INTO MINORS(Minor_Dept, Minor_Student_CWID)
-VALUES (12345, 1598523575);
-
-INSERT INTO MINORS(Minor_Dept, Minor_Student_CWID)
-VALUES (12345, 1478963250);
-
-INSERT INTO MINORS(Minor_Dept, Minor_Student_CWID)
-VALUES (12345, 5812301578);
-
-INSERT INTO MINORS(Minor_Dept, Minor_Student_CWID)
-VALUES (12345, 5872365470);
-
-/* 30 Enrollments */
-INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (1837492844, 74937, "CPSC-131", 'A');
-
-INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (1837492844, 15853, "EGCP-280", 'B+');
-
-INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (1837492844, 96241, "EGCP-470", 'A');
-
-INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (9872589514, 23802, "CPSC-131", 'B+');
-
-INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (9872589514, 15853, "EGCP-280", 'C+');
-
-INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (9872589514, 96241, "EGCP-470", 'B');
-
-INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (1598523575, 71157, "CPSC-311", 'B+');
-
-INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (1598523575, 15853, "EGCP-280", 'B+');
-
-INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (1598523575, 98723, "EGCP-470", 'B-');
-
-INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (1478963250, 65487, "CPSC-311", 'A-');
-
-INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (1478963250, 15853, "EGCP-280", 'B+');
-
-INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (1478963250, 96241, "EGCP-470", 'C-');
-
-INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (5812301578, 23802, "CPSC-131", 'C-');
-
-INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (5812301578, 15853, "EGCP-280", 'B-');
-
-INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (5812301578, 98723, "EGCP-470", 'A-');
-
-INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (5872365470, 74937, "CPSC-131", 'B-');
-
-INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (5872365470, 15853, "EGCP-280", 'A');
-
-INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (5872365470, 98723, "EGCP-470", 'A');
-
-INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (3579514879, 85390, "CPSC-311", 'B+');
-
-INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (3579514879, 15853, "EGCP-280", 'A-');
-
-INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (3579514879, 96241, "EGCP-470", 'C+');
-
-INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (7890286981, 71157, "CPSC-311", 'B-');
-
-INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (7890286981, 15853, "EGCP-280", 'A');
-
-INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (7890286981, 98723, "EGCP-470", 'A-');
-
-INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (2486309715, 23802, "CPSC-131", 'B-');
-
-INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (2486309715, 15853, "EGCP-280", 'A');
-
-INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (2486309715, 96241, "EGCP-470", 'A');
-
-INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (7093214568, 71157, "CPSC-311", 'B+');
-
-INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (7093214568, 15853, "EGCP-280", 'B+');
-
-INSERT INTO ENROLLMENT(Enrollment_CWID, Enrollment_Section_Number, Enrollment_Course_Number, Grade)
-VALUES (7093214568, 98723, "EGCP-470", 'B-');
+-- Insert 20 Enrollments
+Insert Into Enrollment (grade,s_id,stu_id)
+Values
+('A',13661,123456789),('B',13642,123456789),('A',13374,123456789),('B',18333,123456789),
+('C',13661,234567891),('D',13642,234567891),('A',13374,234567891),('B',18333,234567891),
+('C',13661,345678912),('B',13642,345678912),('B',13374,345678912),('A',18333,345678912),
+('B',13887,456789123),('A',13374,456789123),('A',13661,456789123),('B',18446,456789123),
+('A',13887,567891234),('C',13374,567891234),('D',13661,678912345),('A',18446,678912345),
+('B',13887,789123456),('A',18446,789123456),('A',13661,891234567),('B',18446,891234567);
