@@ -35,8 +35,8 @@ $select = "SELECT course_title, grade
 
   for($i=0; $i<mysql_numrows($result); $i++)
   {
-   echo "Course Title: ", mysql_result($result,$i, Course_Title), "<br>";
-   echo "Grade: ", mysql_result($result,$i, Grade), "<br>", "<br>";
+   echo "Course Title: ", mysql_result($result,$i, course_title), "<br>";
+   echo "Grade: ", mysql_result($result,$i, grade), "<br>", "<br>";
   }
 
  echo "Fetched data successfully\n";
