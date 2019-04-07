@@ -20,19 +20,35 @@ if (!$link)
 
  mysql_select_db($username,$link);
 
-// Validation the inputs
+$select = "SELECT title, class_room, meeting_day, beginning_day, ending_day
+ FROM Course, Section, Professor
+ WHERE prof_id = ssn AND course_id c_id
+ AND prof_id =".$_POST[professor_ssn];
 
 
- $result = mysql_query("SELECT  FROM STUDENT",$link);
 
- // for($i=0; $i<mysql_numrows($result); $i++)
- // {
- // echo "SSN: ", mysql_result($result,$i,"ssn"), “<br>”;
- // echo "First NAME: ", mysql_result($result,$i,"fname"), “<br>”;
- // echo "Last NAME: ", mysql_result($result,$i,"lname"), “<br>”;• }
- // mysql_close($link);
- //
+ $result = mysql_query($select,$link);
+
+ for($i=0; $i<mysql_numrows($result); $i++)
+ {
+ echo "Course Title: ", mysql_result($result,$i,title), "<br>";
+ echo "Class Room: ", mysql_result($result,$i,class_room), "<br>";
+ echo "Meeting Days: ", mysql_result($result,$i,meeting_day), "<br>";
+ echo "Beginning Day: ", mysql_result($result,$i,beginning_day), "<br>";
+ echo "Ending Day: ", mysql_result($result,$i,ending_day), "<br>";
+ }
+
+ mysql_close($link);
+
  ?>
+
+ <button onclick="goBack()">Go Back</button>
+
+ <script>
+ function goBack() {
+     window.history.back();
+ }
+ </script>
 
  </body>
  </html>
