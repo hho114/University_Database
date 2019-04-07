@@ -40,7 +40,7 @@ Create Table Minor_Major
 
   stu_id numeric(10) not null foreign key references Student(cwid),
   minor_major_id numeric(5) not null foreign key references Department(d_id)
-  
+
 );
 
 -- Create table Department
@@ -61,14 +61,14 @@ Create Table Course
   title varchar(50) not null,
   textbook varchar(60) not null,
   units int not null,
-  d_id numeric(5) not null foreign key references Department(d_id)
+  department_id numeric(5) not null foreign key references Department(d_id)
 
 );
 
 -- create table Prerequisite
 Create Table Prerequisite
 (
-  c_id varchar(10) not null foreign key references Course(c_id),
+  course_id varchar(10) not null foreign key references Course(c_id),
   pre_course_id varchar(10) foreign key references Course(c_id)
 );
 
@@ -82,13 +82,13 @@ Create Table Section
   beginning_day varchar(20) not null,
   ending_day varchar(20) not null,
   prof_id numeric(9) not null foreign key references Professor(ssn),
-  c_id varchar(10) not null foreign key references Course(c_id)
+  course_id varchar(10) not null foreign key references Course(c_id)
 );
 
 -- create table Enrollment
 Create Table Enrollment
 (
   grade enum('A','A-','B+','B','B-','C+','C','C-','D+','D','D-','F') not null,
-  s_id not null foreign key references Section(s_id),
+  section_id not null foreign key references Section(s_id),
   stu_id not null foreign key references Student(cwid)
 );

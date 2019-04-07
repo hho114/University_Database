@@ -13,6 +13,7 @@
 
       <h3>For Professor</h3>
      <form action="professor.php" method="POST">
+       <!-- Search by professor ssn -->
        <div class="row">
          <div class="col-20">
            <label for="professor_ssn">SSN</label>
@@ -29,20 +30,18 @@
      </form>
 
      <form action="count_student.php" method="POST">
+       <!-- Search by course number and section number -->
        <div class="row">
-         <div class="col-20">
+         <div class="col-15">
            <label for="course_num">Course Number</label>
          </div>
          <div class="col-30">
            <input type="text" id="course_num" name="course_num"
            placeholder="Course number.."  >
          </div>
-
-
-         <div class="col-5">
+         <div class="col-10">
             <label for="empty"> </label>
           </div>
-
            <div class="col-15">
              <label for="section_num"> Section Number</label>
            </div>
@@ -51,8 +50,6 @@
              placeholder="Section number.."  >
            </div>
        </div>
-
-
        <br/>
        <div class="row">
          <input type="submit" value="Submit">
@@ -67,27 +64,15 @@
 <!-- For student -->
    <div class="container">
      <h3>For Student</h3>
-    <form action="student.php">
-
+    <form action="student.php" method="POST">
+      <!--Search by course number  -->
       <div class="row">
         <div class="col-25">
-          <label for="student_last_name">Last Name</label>
+          <label for="stu_course_num">Course Number</label>
         </div>
         <div class="col-75">
-          <input type="text" id="student_last_name" name="student_last_name"
-          placeholder="Student last name.."
-          >
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-25">
-          <label for="student_id">CWID</label>
-        </div>
-        <div class="col-75">
-          <input type="text" id="student_id" name="student_id"
-          placeholder="Student id.."
-          >
+          <input type="text" id="stu_course_num" name="stu_course_num"
+          placeholder="Course number..">
         </div>
       </div>
       <br/>
@@ -95,6 +80,24 @@
         <input type="submit" value="Submit">
       </div>
     </form>
+
+    <form action="student.php" method="POST">
+      <!--Search by CWID  -->
+      <div class="row">
+        <div class="col-25">
+          <label for="student_cwid">CWID</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="student_cwid" name="student_cwid"
+          placeholder="CWID..">
+        </div>
+      </div>
+      <br/>
+      <div class="row">
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+
    </div>
 
 
