@@ -100,8 +100,8 @@ Create Table Section
 Create Table Enrollment
 (
   enroll_grade enum('A','A-','B+','B','B-','C+','C','C-','D+','D','D-','F') not null,
-  enroll_section_id not null ,
-  enroll_stu_cwid not null ,
+  enroll_section_id numeric(5) not null ,
+  enroll_stu_cwid numeric(10) not null ,
   foreign key(enroll_section_id) references Section(section_id),
   foreign key (enroll_stu_cwid)references Student(stu_cwid)
 );
