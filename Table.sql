@@ -3,34 +3,35 @@
 
 Create Table Professor
 (
-  ssn numeric(9) not null primary key,
-  name varchar(40) not null,
-  phone_number_area numeric(3) not null,
-  phone_number_digit numeric(7) not null,
-  sex varchar(10) not null,
-  title enum('Dr.','Mr.','Ms.','Mrs.') not null,
-  salary numeric(10) not null,
-  addr_street varchar(40) not null,
-  addr_city varchar(30) not null,
-  addr_state varchar(2) not null,
-  addr_zipcode numeric(6) not null
+  prof_ssn numeric(9) not null primary key,
+  prof_name varchar(40) not null,
+  prof_phone_number_area numeric(3) not null,
+  prof_phone_number_digit numeric(7) not null,
+  prof_sex varchar(10) not null,
+  prof_title enum('Dr.','Mr.','Ms.','Mrs.') not null,
+  prof_salary numeric(10) not null,
+  prof_addr_street varchar(40) not null,
+  prof_addr_city varchar(30) not null,
+  prof_addr_state varchar(2) not null,
+  prof_addr_zipcode numeric(6) not null
 );
 
 -- Create Table Degree
 Create Table Degree
 (
-  degree_prof_id numeric(9) not null foreign key references Professor(ssn),
+  degree_prof_id numeric(9) not null foreign key references Professor(prof_ssn),
   degree_name varchar (20) not null
 );
 
 -- Create table student
 Create Table Student
 (
-  cwid numeric(10) not null primary key,
-  first_name varchar(20) not null,
-  last_name varchar(20) not null,
-  address varchar(60) not null,
-  major numeric(5) not null foreign key references Department(department_id),
+  stu_cwid numeric(10) not null primary key,
+  stu_first_name varchar(20) not null,
+  stu_last_name varchar(20) not null,
+  stu_address varchar(60) not null,
+  stu_phone_number numeric(10) not null,
+  stu_major_dep_id numeric(5) not null foreign key references Department(dep_id),
 );
 
 -- Create Minor Major Table
@@ -38,19 +39,19 @@ Create Table Student
 Create Table Minor
 (
 
-  stu_id numeric(10) not null foreign key references Student(cwid),
-  minor_id numeric(5) not null foreign key references Department(department_id)
+  minor_stu_id numeric(10) not null foreign key references Student(stu_cwid),
+  minor_dep_id numeric(5) not null foreign key references Department(dep_id)
 
 );
 
 -- Create table Department
 Create Table Department
 (
-  department_id numeric(5) not null primary key,
-  name varchar(20) not null,
-  phone_number numeric(10) not null,
-  location varchar(60) not null,
-  chair_prof_id numeric(9) not null foreign key references Professor(ssn)
+  dep_id numeric(5) not null primary key,
+  dep_name varchar(20) not null,
+  dep_phone_number numeric(10) not null,
+  dep_location varchar(60) not null,
+  dep_chair_prof_id numeric(9) not null foreign key references Professor(prof_ssn)
 
 );
 
@@ -58,10 +59,10 @@ Create Table Department
 Create Table Course
 (
   course_id varchar(10) not null primary key,
-  title varchar(50) not null,
-  textbook varchar(60) not null,
-  units int not null,
-  course_department_id numeric(5) not null foreign key references Department(department_id)
+  course_title varchar(50) not null,
+  course_textbook varchar(60) not null,
+  course_units int not null,
+  course_dep_id numeric(5) not null foreign key references Department(dep_id)
 
 );
 
@@ -76,19 +77,19 @@ Create Table Prerequisite
 Create Table Section
 (
   section_id numeric(5) not null primary key,
-  class_room varchar(10) not null,
-  amount_of_seat int not null,
-  meeting_day varchar(20) not null,
-  beginning_day varchar(20) not null,
-  ending_day varchar(20) not null,
-  section_prof_id numeric(9) not null foreign key references Professor(ssn),
+  section_class_room varchar(10) not null,
+  section_amount_of_seat int not null,
+  section_meeting_day varchar(20) not null,
+  section_beginning_day varchar(20) not null,
+  section_ending_day varchar(20) not null,
+  section_prof_id numeric(9) not null foreign key references Professor(prof_ssn),
   section_course_id varchar(10) not null foreign key references Course(course_id)
 );
 
 -- create table Enrollment
 Create Table Enrollment
 (
-  grade enum('A','A-','B+','B','B-','C+','C','C-','D+','D','D-','F') not null,
+  enroll_grade enum('A','A-','B+','B','B-','C+','C','C-','D+','D','D-','F') not null,
   enroll_section_id not null foreign key references Section(section_id),
-  enroll_stu_id not null foreign key references Student(cwid)
+  enroll_stu_id not null foreign key references Student(stu_cwid)
 );
