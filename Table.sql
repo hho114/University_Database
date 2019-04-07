@@ -3,7 +3,7 @@
 
 Create Table Professor
 (
-  prof_ssn numeric(9) not null primary key,
+  prof_id numeric(9) not null primary key,
   prof_name varchar(40) not null,
   prof_phone_number_area numeric(3) not null,
   prof_phone_number_digit numeric(7) not null,
@@ -19,7 +19,7 @@ Create Table Professor
 -- Create Table Degree
 Create Table Degree
 (
-  degree_prof_id numeric(9) not null foreign key references Professor(prof_ssn),
+  degree_prof_id numeric(9) not null foreign key references Professor(prof_id),
   degree_name varchar (20) not null
 );
 
@@ -39,7 +39,7 @@ Create Table Student
 Create Table Minor
 (
 
-  minor_stu_id numeric(10) not null foreign key references Student(stu_cwid),
+  minor_stu_cwid numeric(10) not null foreign key references Student(stu_cwid),
   minor_dep_id numeric(5) not null foreign key references Department(dep_id)
 
 );
@@ -51,7 +51,7 @@ Create Table Department
   dep_name varchar(20) not null,
   dep_phone_number numeric(10) not null,
   dep_location varchar(60) not null,
-  dep_chair_prof_id numeric(9) not null foreign key references Professor(prof_ssn)
+  dep_chair_prof_id numeric(9) not null foreign key references Professor(prof_id)
 
 );
 
@@ -82,7 +82,7 @@ Create Table Section
   section_meeting_day varchar(20) not null,
   section_beginning_day varchar(20) not null,
   section_ending_day varchar(20) not null,
-  section_prof_id numeric(9) not null foreign key references Professor(prof_ssn),
+  section_prof_id numeric(9) not null foreign key references Professor(prof_id),
   section_course_id varchar(10) not null foreign key references Course(course_id)
 );
 
@@ -91,5 +91,5 @@ Create Table Enrollment
 (
   enroll_grade enum('A','A-','B+','B','B-','C+','C','C-','D+','D','D-','F') not null,
   enroll_section_id not null foreign key references Section(section_id),
-  enroll_stu_id not null foreign key references Student(stu_cwid)
+  enroll_stu_cwid not null foreign key references Student(stu_cwid)
 );
