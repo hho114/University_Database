@@ -8,8 +8,7 @@ $password = "Oaj2chea";
 
 // username and password need to be replaced by your username and password
 // $link = mysql_connect('ecsmysql', 'username', 'password');
-$professor_name = "";
-$ssn;
+
 $link = mysql_connect($servername, $username, $password);
 if (!$link)
 {
