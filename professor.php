@@ -7,9 +7,6 @@ $username = "cs322t15";
 $password = "huythanh";
 $dbname = "myDB";
 // username and password need to be replaced by your username and password
-// $link = mysql_connect('ecsmysql', 'username', 'password');
-$professor_name = "";
-$ssn;
 $link = mysql_connect($servername, $username, $password);
 if (!$link)
 {
@@ -20,24 +17,30 @@ if (!$link)
 
  mysql_select_db($username,$link);
 
-$select = "SELECT title, class_room, meeting_day, beginning_day, ending_day
+//use SQL SELECT to query data
+$select = "SELECT course_title, section_class_room, section_meeting_day, section_beginning_day, section_ending_day
  FROM Course, Section, Professor
- WHERE prof_id = ssn AND course_id c_id
- AND prof_id =".$_POST[professor_ssn];
+ WHERE section_prof_id = prof_id AND section_id = section_course_id
+ AND prof_id =".$_POST["professor_ssn"];
 
 
 
  $result = mysql_query($select,$link);
+  if(!$result)//check if find data correct
+  {
+    die('Could not get data: '. mysql_error());
+  }
 
  for($i=0; $i<mysql_numrows($result); $i++)
  {
- echo "Course Title: ", mysql_result($result,$i,title), "<br>";
- echo "Class Room: ", mysql_result($result,$i,class_room), "<br>";
- echo "Meeting Days: ", mysql_result($result,$i,meeting_day), "<br>";
- echo "Beginning Day: ", mysql_result($result,$i,beginning_day), "<br>";
- echo "Ending Day: ", mysql_result($result,$i,ending_day), "<br>";
+ echo "Course Title: ", mysql_result($result,$i,course_title), "<br>";
+ echo "Class Room: ", mysql_result($result,$i,section_class_room), "<br>";
+ echo "Meeting Days: ", mysql_result($result,$i,section_meeting_day), "<br>";
+ echo "Beginning Day: ", mysql_result($result,$i,section_beginning_day), "<br>";
+ echo "Ending Day: ", mysql_result($result,$i,section_ending_day), "<br>";
  }
 
+ echo "Fetched data successfully\n";
  mysql_close($link);
 
  ?>
