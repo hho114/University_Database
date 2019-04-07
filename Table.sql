@@ -16,6 +16,17 @@ Create Table Professor
   prof_addr_zipcode numeric(6) not null
 );
 
+-- Create table Department
+Create Table Department
+(
+  dep_id numeric(5) not null primary key,
+  dep_name varchar(20) not null,
+  dep_phone_number numeric(10) not null,
+  dep_location varchar(10) not null,
+  dep_chair_prof_id numeric(9) not null,
+  foreign key (dep_chair_prof_id)references Professor(prof_id)
+
+);
 -- Create Table Degree
 Create Table Degree
 (
@@ -47,18 +58,6 @@ foreign key(minor_stu_cwid) references Student(stu_cwid),
 foreign key (minor_dep_id) references Department(dep_id)
 );
 
--- Create table Department
-Create Table Department
-(
-  dep_id numeric(5) not null primary key,
-  dep_name varchar(20) not null,
-  dep_phone_number numeric(10) not null,
-  dep_location varchar(60) not null,
-  dep_chair_prof_id numeric(9) not null,
-  foreign key (dep_chair_prof_id)references Professor(prof_id)
-
-);
-
 -- Create table Course
 Create Table Course
 (
@@ -75,10 +74,8 @@ Create Table Course
 Create Table Prerequisite
 (
   upper_course_id varchar(10) not null,
-  lower_course_id varchar(10) ,
-  foreign key(upper_course_id) references Course(course_id),
-  foreign key(lower_course_id) references Course(course_id)
-
+  lower_course_id varchar(10),
+  foreign key(upper_course_id) references Course(course_id)
 );
 
 -- create table Section

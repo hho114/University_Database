@@ -7,7 +7,7 @@ Values
 (124033735, "Alfonso Agnew",657,2787021,"Male","Mr.",100000, "800 N State College Blvd", "Fullerton", "CA", 92831);
 
 -- Insert Professor degree
-Insert Into DEGREE(degree_prof_id,degree_name )
+Insert Into Degree(degree_prof_id,degree_name )
 Values
 (122039736, "PhD Computer Science"),
 (122039736, "MS Computer Science"),
@@ -30,10 +30,10 @@ Values
 
 Insert Into Course(course_id,course_title,course_textbook,course_units,course_dep_id)
 Values
-("CPSC 332","File Structures and Database Systems",3,12345),
-("CPSC 351","Operating Systems Concepts",3,12345),
-("Math 338","Stats Applied to Natural Sciences",4,67890),
-("CPSC 335","Algorithm Engineering",3,12345);
+("CPSC 332","File Structures and Database Systems","Database Systems",3,12345),
+("CPSC 351","Operating Systems Concepts","Fundametal of Operating Systems",3,12345),
+("Math 338","Stats Applied to Natural Sciences","Application to Statistics",4,67890),
+("CPSC 335","Algorithm Engineering","Run Forest Run",3,12345);
 
 
 --Insert Prerequisite Course
@@ -84,8 +84,17 @@ Values
 Insert Into Enrollment (enroll_grade,enroll_section_id,enroll_stu_cwid)
 Values
 ('A',13661,123456789),('B',13642,123456789),('A',13374,123456789),('B',18333,123456789),
+
 ('C',13661,234567891),('D',13642,234567891),('A',13374,234567891),('B',18333,234567891),
+
 ('C',13661,345678912),('B',13642,345678912),('B',13374,345678912),('A',18333,345678912),
+
 ('B',13887,456789123),('A',13374,456789123),('A',13642,456789123),('B',18446,456789123),
-('A',13887,567891234),('C',13374,567891234),('D',13642,678912345),('A',18446,678912345),
-('B',13887,789123456),('A',18446,789123456),('A',13661,891234567),('B',18446,891234567);
+
+('A',13887,567891234),('C',13374,567891234),
+
+('D',13642,678912345),('A',18446,678912345),
+
+('B',13887,789123456),('A',18446,789123456),
+
+('A',13661,891234567),('B',18446,891234567);
