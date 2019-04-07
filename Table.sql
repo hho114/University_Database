@@ -33,7 +33,7 @@ Create Table Student
   stu_address varchar(60) not null,
   stu_phone_number numeric(10) not null,
   stu_major_dep_id numeric(5) not null,
-  foreign key (stu_major_dep_id) references Department(dep_id),
+  foreign key (stu_major_dep_id) references Department(dep_id)
 );
 
 -- Create Minor Major Table
