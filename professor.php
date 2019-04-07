@@ -4,10 +4,10 @@
 <?php
 $servername = "ecsmysql";
 $username = "cs322t15";
-$password = "huythanh";
-$dbname = "myDB";
+$password = "Oaj2chea";
+
 // username and password need to be replaced by your username and password
-$link = mysql_connect($servername, $username, $password);
+$link = mysql_connect('ecsmysql', 'cs322t15', 'Oaj2chea');
 if (!$link)
 {
   die('Could not connect: ' . mysql_error());
@@ -15,7 +15,7 @@ if (!$link)
 }
  echo 'Connected successfully<p>';
 
- mysql_select_db($username,$link);
+ mysql_select_db("cs322t15",$link);
 
 //use SQL SELECT to query data
 $select = "SELECT course_title, section_class_room, section_meeting_day, section_beginning_day, section_ending_day

@@ -4,8 +4,8 @@
 <?php
 $servername = "ecsmysql";
 $username = "cs322t15";
-$password = "huythanh";
-$dbname = "myDB";
+$password = "Oaj2chea";
+
 // username and password need to be replaced by your username and password
 // $link = mysql_connect('ecsmysql', 'username', 'password');
 $professor_name = "";
@@ -21,20 +21,22 @@ if (!$link)
  mysql_select_db($username,$link);
 
 $select = "SELECT  Count(DISTINCT grade) as 'Count'
- FROM Course C, Section S, Enrollment E
- WHERE C.c_id = S.course_id AND S.s_id
-
-
+ FROM Course , Section , Enrollment
+ WHERE course_id = section_course_id
+ AND enroll_section_id = section_id
+ AND course_id = ".$_POST["course_num"].
+ "AND section_id = ".$_POST["section_num"]."GROUP BY grade;";
 
  $result = mysql_query($select,$link);
 
+ if(!$result)//check if find data correct
+ {
+   die('Could not get data: '. mysql_error());
+ }
+
  for($i=0; $i<mysql_numrows($result); $i++)
  {
- echo "Course Title: ", mysql_result($result,$i,title), "<br>";
- echo "Class Room: ", mysql_result($result,$i,class_room), "<br>";
- echo "Meeting Days: ", mysql_result($result,$i,meeting_day), "<br>";
- echo "Beginning Day: ", mysql_result($result,$i,beginning_day), "<br>";
- echo "Ending Day: ", mysql_result($result,$i,ending_day), "<br>";
+   echo mysql_result($result,$i,"Count"), " student(s) got: ", mysql_result($result,$i, grade), "<br>";
  }
 
  mysql_close($link);
