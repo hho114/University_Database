@@ -1,35 +1,71 @@
 <html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
 <body bgcolor= #A9A9A9>
-
-
   <div id="main">
   		<h1>CPSC 332 Spring 2019 Team Project </h1>
   		<h2>By: Alex Ho & Macro Chavez</h2>
       <br></div>
 
-      <form action="action_page.php">
- <div class="imgcontainer">
-   <img src="img_avatar2.png" alt="Avatar" class="avatar">
- </div>
+<!-- For Professor -->
+    <div class="container">
+      <h3>For Professor</h3>
+     <form action="professor.php" method="POST">
+       <div class="row">
+         <div class="col-25">
+           <label for="professor_ssn">SSN</label>
+         </div>
+         <div class="col-75">
+           <input type="text" id="professor_ssn" name="professor_ssn"
+           placeholder="Professor ssn.."  >
+         </div>
+       </div>
+       <br/>
+       <div class="row">
+         <input type="submit" value="Submit">
+       </div>
 
- <div class="container">
-   <label for="uname"><b>Username</b></label>
-   <input type="text" placeholder="Enter Username" name="uname" required>
+     </form>
+   </div>
 
-   <label for="psw"><b>Password</b></label>
-   <input type="password" placeholder="Enter Password" name="psw" required>
+<br/>
 
-   <button type="submit">Login</button>
-   <label>
-     <input type="checkbox" checked="checked" name="remember"> Remember me
-   </label>
- </div>
 
- <div class="container" style="background-color:#f1f1f1">
-   <button type="button" class="cancelbtn">Cancel</button>
-   <span class="psw">Forgot <a href="#">password?</a></span>
- </div>
-</form>
+<!-- For student -->
+   <div class="container">
+     <h3>For Student</h3>
+    <form action="student.php">
+
+      <div class="row">
+        <div class="col-25">
+          <label for="student_last_name">Last Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="student_last_name" name="student_last_name"
+          placeholder="Student last name.."
+          >
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="student_id">CWID</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="student_id" name="student_id"
+          placeholder="Student id.."
+          >
+        </div>
+      </div>
+      <br/>
+      <div class="row">
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+   </div>
+
+
 
 </body>
 </html>
