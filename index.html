@@ -10,13 +10,14 @@
 
 <!-- For Professor -->
     <div class="container">
+
       <h3>For Professor</h3>
      <form action="professor.php" method="POST">
        <div class="row">
-         <div class="col-25">
+         <div class="col-20">
            <label for="professor_ssn">SSN</label>
          </div>
-         <div class="col-75">
+         <div class="col-80">
            <input type="text" id="professor_ssn" name="professor_ssn"
            placeholder="Professor ssn.."  >
          </div>
@@ -25,8 +26,39 @@
        <div class="row">
          <input type="submit" value="Submit">
        </div>
-
      </form>
+
+     <form action="count_student.php" method="POST">
+       <div class="row">
+         <div class="col-20">
+           <label for="course_num">Course Number</label>
+         </div>
+         <div class="col-30">
+           <input type="text" id="course_num" name="course_num"
+           placeholder="Course number.."  >
+         </div>
+
+
+         <div class="col-5">
+            <label for="empty"> </label>
+          </div>
+
+           <div class="col-15">
+             <label for="section_num"> Section Number</label>
+           </div>
+           <div class="col-30">
+             <input type="text" id="section_num" name="section_num"
+             placeholder="Section number.."  >
+           </div>
+       </div>
+
+
+       <br/>
+       <div class="row">
+         <input type="submit" value="Submit">
+       </div>
+     </form>
+
    </div>
 
 <br/>
