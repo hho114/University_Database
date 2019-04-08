@@ -2,7 +2,7 @@
 <body>
 
 <?php
-$servername = "ecsmysql";
+$servername = "mariadb";
 $username = "cs322t15";
 $password = "Oaj2chea";
 
