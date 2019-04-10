@@ -2,13 +2,14 @@
 <body>
 
 <?php
-$servername = "mariadb";
-$username = "cs322t15";
+$servername = "ecsmysql";
+$username = "cs332t15";
 $password = "Oaj2chea";
+$mydb = "mariadb";
 
 // username and password need to be replaced by your username and password
 // $link = mysql_connect('ecsmysql', 'username', 'password');
-$link = mysql_connect($servername, $username, $password);
+$link = mysql_connect($servername, $username, $password, $mydb);
 if (!$link)
 {
   die('Could not connect: ' . mysql_error());
