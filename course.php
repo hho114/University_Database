@@ -25,8 +25,7 @@ $select = = "SELECT course_id, course_title, section_id, section_class_room, sec
 	FROM Course, Enrollment, Section
 	WHERE enroll_section_id = section_id
 	AND course_id = section_course_id
-	AND enroll_section_id ='".$_POST["stu_course_num"]."'
-	GROUP BY section_id;";
+	AND enroll_section_id = ".$_POST["stu_course_num"]." GROUP BY section_id;";
 
  $result = mysql_query($select,$link);
 

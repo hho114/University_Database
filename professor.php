@@ -23,7 +23,7 @@ if (!$link)
 $select = "SELECT course_title, section_class_room, section_meeting_day, section_beginning_day, section_ending_day
  FROM Course, Section, Professor
  WHERE section_prof_id = prof_id AND section_id = section_course_id
- AND prof_id =".$_POST["professor_ssn"];
+ AND prof_id = ".$_POST["professor_ssn"]. ";";
 
 
 

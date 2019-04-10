@@ -20,11 +20,10 @@ if (!$link)
  mysql_select_db($username,$link);
 
 //use SQL SELECT to query data
-$select = "SELECT course_title, grade
-
+$select = "SELECT course_title, enroll_grade
 	FROM Enrollment, Course, Section, Student
 	WHERE  stu_cwid = enroll_stu_cwid AND enroll_section_id = section_id
-  AND section_course_id = course_id AND enroll_stu_cwid =" .$_POST["student_cwid"];
+  AND section_course_id = course_id AND enroll_stu_cwid = " .$_POST["student_cwid"].";";
 
 
 
@@ -37,7 +36,7 @@ $select = "SELECT course_title, grade
   for($i=0; $i<mysql_numrows($result); $i++)
   {
    echo "Course Title: ", mysql_result($result,$i, course_title), "<br>";
-   echo "Grade: ", mysql_result($result,$i, grade), "<br>", "<br>";
+   echo "Grade: ", mysql_result($result,$i, enroll_grade), "<br>", "<br>";
   }
 
  echo "Fetched data successfully\n";

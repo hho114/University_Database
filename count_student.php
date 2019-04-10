@@ -19,12 +19,12 @@ if (!$link)
 
  mysql_select_db($username,$link);
 
-$select = "SELECT  Count(DISTINCT grade) as 'Count'
+$select = "SELECT Count(DISTINCT enroll_grade) as 'Count'
  FROM Course , Section , Enrollment
  WHERE course_id = section_course_id
  AND enroll_section_id = section_id
  AND course_id = ".$_POST["course_num"].
- "AND section_id = ".$_POST["section_num"]."GROUP BY grade;";
+ " AND section_id = ".$_POST["section_num"]." GROUP BY enroll_grade;";
 
  $result = mysql_query($select,$link);
 
