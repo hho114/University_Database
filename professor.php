@@ -19,7 +19,9 @@ if (!$link)
 
  mysql_select_db($username,$link);
 
-//use SQL SELECT to query data
+
+ // TO DO: fix the sql command to sastify section a for Professor,
+ // check project assigment for more info.
 $select = "SELECT course_title, section_class_room, section_meeting_day, section_beginning_day, section_ending_day
  FROM Course, Section, Professor
  WHERE section_prof_id = prof_id AND section_id = section_course_id
@@ -32,19 +34,21 @@ $select = "SELECT course_title, section_class_room, section_meeting_day, section
   {
     die('Could not get data: '. mysql_error());
   }
+  else
+  {
+   for($i=0; $i<mysql_numrows($result); $i++)
+   {
+   echo "Course Title: ", mysql_result($result,$i,course_title), "<br>";
+   echo "Class Room: ", mysql_result($result,$i,section_class_room), "<br>";
+   echo "Meeting Days: ", mysql_result($result,$i,section_meeting_day), "<br>";
+   echo "Beginning Day: ", mysql_result($result,$i,section_beginning_day), "<br>";
+   echo "Ending Day: ", mysql_result($result,$i,section_ending_day), "<br>", "<br>";
+   }
 
- for($i=0; $i<mysql_numrows($result); $i++)
- {
- echo "Course Title: ", mysql_result($result,$i,course_title), "<br>";
- echo "Class Room: ", mysql_result($result,$i,section_class_room), "<br>";
- echo "Meeting Days: ", mysql_result($result,$i,section_meeting_day), "<br>";
- echo "Beginning Day: ", mysql_result($result,$i,section_beginning_day), "<br>";
- echo "Ending Day: ", mysql_result($result,$i,section_ending_day), "<br>";
- }
+   echo "Fetched data successfully\n";
 
- echo "Fetched data successfully\n";
- mysql_close($link);
-
+}
+mysql_close($link);
  ?>
 
  <button onclick="goBack()">Go Back</button>

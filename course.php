@@ -19,7 +19,9 @@ if (!$link)
 
  mysql_select_db($username,$link);
 
-$select = = "SELECT course_id, course_title, section_id, section_class_room, section_meeting_day,
+ // TO DO: fix the sql command to sastify section a for Student,
+ // check project assigment for more info.
+$select = "SELECT course_id, course_title, section_id, section_class_room, section_meeting_day,
 		section_beginning_day, section_ending_day, (section_amount_of_seat-COUNT(enroll_stu_cwid)) as 'Seats'
 
 	FROM Course, Enrollment, Section
