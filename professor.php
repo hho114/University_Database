@@ -19,25 +19,24 @@ if (!$link)
 
  mysql_select_db($username,$link);
 
-
+$prof_ssn = $_POST["professor_ssn"];
  // TO DO: fix the sql command to sastify section a for Professor,
  // check project assigment for more info.
 $select = "SELECT course_title, section_class_room, section_meeting_day, section_beginning_day, section_ending_day
  FROM Course, Section, Professor
- WHERE section_prof_id = prof_id AND section_id = section_course_id
- AND prof_id = ".$_POST["professor_ssn"]. ";";
-
+ WHERE prof_id = '$prof_ssn' AND prof_id = section_prof_id AND course_id = section_course_id ";
 
 
  $result = mysql_query($select,$link);
+ 
   if(!$result)//check if find data correct
   {
     die('Could not get data: '. mysql_error());
   }
-  else
-  {
+
    for($i=0; $i<mysql_numrows($result); $i++)
    {
+
    echo "Course Title: ", mysql_result($result,$i,course_title), "<br>";
    echo "Class Room: ", mysql_result($result,$i,section_class_room), "<br>";
    echo "Meeting Days: ", mysql_result($result,$i,section_meeting_day), "<br>";
@@ -47,7 +46,7 @@ $select = "SELECT course_title, section_class_room, section_meeting_day, section
 
    echo "Fetched data successfully\n";
 
-}
+
 mysql_close($link);
  ?>
 
