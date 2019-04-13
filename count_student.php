@@ -19,13 +19,16 @@ if (!$link)
 
  mysql_select_db($username,$link);
 
+$course_id_input = $_POST["course_num"];
+$section_id_input = $_POST["section_num"];
+
 // TO DO: fix the sql command to sastify section b for Professor,
 // check project assigment for more info.
-$select = "SELECT Count(DISTINCT enroll_grade) as 'Count'
+$select = "SELECT enroll_grade Count(enroll_stu_cwid) as num_of_student
  FROM Course , Section , Enrollment
  WHERE course_id = section_course_id
  AND enroll_section_id = section_id
- AND course_id = ".$_POST["course_num"]." AND section_id = ".$_POST["section_num"]." GROUP BY enroll_grade;";
+ AND course_id = '$course_id_input' AND section_id = '$section_id_input' GROUP BY enroll_grade";
 
  $result = mysql_query($select,$link);
 
@@ -36,7 +39,7 @@ $select = "SELECT Count(DISTINCT enroll_grade) as 'Count'
 
  for($i=0; $i<mysql_numrows($result); $i++)
  {
-   echo mysql_result($result,$i,"Count"), " student(s) got: ", mysql_result($result,$i, grade), "<br>";
+   echo mysql_result($result,$i, "num_of_student"), " student(s) got: ", mysql_result($result,$i, enroll_grade), "<br>";
  }
 
  mysql_close($link);
