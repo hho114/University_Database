@@ -19,11 +19,12 @@ if (!$link)
 
  mysql_select_db($username,$link);
 
+$stu_id = $_POST["student_cwid"];
 //use SQL SELECT to query data
 $select = "SELECT course_title, enroll_grade
 	FROM Enrollment, Course, Section, Student
 	WHERE  stu_cwid = enroll_stu_cwid AND enroll_section_id = section_id
-  AND section_course_id = course_id AND enroll_stu_cwid = " .$_POST["student_cwid"].";";
+  AND section_course_id = course_id AND enroll_stu_cwid =  '$stu_id'";
 
 
 
