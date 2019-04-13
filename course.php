@@ -5,8 +5,6 @@
 $servername = "ecsmysql";
 $username = "cs332t15";
 $password = "Oaj2chea";
-$username = "cs332t4";
-$password = "aeg3Yaey";
 $mydb = "mariadb";
 
 // username and password need to be replaced by your username and password
