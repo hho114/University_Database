@@ -19,6 +19,7 @@ if (!$link)
 
  mysql_select_db($username,$link);
 
+$course_id =$_POST["stu_course_num"];
  // TO DO: fix the sql command to sastify section a for Student,
  // check project assigment for more info.
 $select = "SELECT course_id, course_title, section_id, section_class_room, section_meeting_day,
@@ -27,7 +28,7 @@ $select = "SELECT course_id, course_title, section_id, section_class_room, secti
 	FROM Course, Enrollment, Section
 	WHERE enroll_section_id = section_id
 	AND course_id = section_course_id
-	AND enroll_section_id = ".$_POST["stu_course_num"]." GROUP BY section_id;";
+	AND course_id = '$course_id' GROUP BY section_id";
 
  $result = mysql_query($select,$link);
 
@@ -39,6 +40,7 @@ $select = "SELECT course_id, course_title, section_id, section_class_room, secti
 
    for($i=0; $i<mysql_numrows($result); $i++)
    {
+    echo "Course Title: ", mysql_result($result,$i,course_title), "<br>";
     echo "Section Number: ", mysql_result($result,$i, section_id), "<br>";
     echo "Classroom Location: ", mysql_result($result,$i, section_class_room), "<br>";
     echo "Meeting Days: ", mysql_result($result,$i, section_meeting_day), "<br>";
