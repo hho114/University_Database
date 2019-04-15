@@ -39,7 +39,8 @@ $select = "SELECT course_title, Count(DISTINCT enroll_grade) as 'Count'
  for($i=0; $i<mysql_numrows($result); $i++)
  {
    echo "Course Title: ", mysql_result($result,$i,course_title), "<br>";
-   echo mysql_result($result,$i,"Count"), " student(s) got: ", mysql_result($result,$i, enroll_grade), "<br>";
+   echo mysql_result($result,$i,"Count"), " student(s) got: ","<br>";
+   echo mysql_result($result,$i, enroll_grade), "<br>";
  }
 
  mysql_close($link);
