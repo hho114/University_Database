@@ -23,7 +23,7 @@ $course_id = $_POST["course_num"];
 $section_id = $_POST["section_num"];
 // TO DO: fix the sql command to sastify section b for Professor,
 // check project assigment for more info.
-$select = "SELECT course_title, Count(DISTINCT enroll_grade) as 'Count'
+$select = "SELECT enroll_grade, course_title, Count(DISTINCT enroll_grade) as 'Count'
  FROM Course , Section , Enrollment
  WHERE course_id = section_course_id
  AND enroll_section_id = section_id
