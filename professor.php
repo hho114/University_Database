@@ -1,11 +1,10 @@
 <html>
-<style>
-<?php include ('styles.css'); ?>
-</style>
-
 <body>
 
 <?php
+
+echo "<link rel="stylesheet" href="styles.css">"
+
 $servername = "ecsmysql";
 $username = "cs332t15";
 $password = "Oaj2chea";
