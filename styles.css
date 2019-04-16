@@ -81,7 +81,7 @@ input[type=submit] {
    width: 100%;
    margin-top: 0;
  }
-/*
+
  table {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -102,5 +102,5 @@ input[type=submit] {
   padding-bottom: 12px;
   text-align: left;
   background-color: #4CAF50;
-  color: white; */
+  color: white;
 }
