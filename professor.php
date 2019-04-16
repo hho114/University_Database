@@ -1,6 +1,6 @@
 <html>
 <style>
-<?php include 'CSS/styles.css'; ?>
+<?php include 'styles.css'; ?>
 </style>
 
 <body>
