@@ -1,31 +1,4 @@
 <html>
-
-<head>
-<style>
-#professor {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-#professor td, #professor th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-#professor tr:nth-child(even){background-color: #f2f2f2;}
-
-#professor tr:hover {background-color: #ddd;}
-
-#professor th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #4CAF50;
-  color: white;
-}
-</style>
-</head>
 <body>
 
 <?php
@@ -67,8 +40,8 @@ $sql = "SELECT course_title, section_class_room, section_meeting_day, section_be
       echo "No rows found, nothing to print so am exiting";
       exit;
   }
+  echo "<table style='border: solid 1px black;'>";
   echo "
-  <table id="professor">
   <tr>
   <th>Course Title</th>
   <th>Class Room</th>
