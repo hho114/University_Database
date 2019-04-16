@@ -22,18 +22,23 @@ if (!$link)
 $prof_ssn = $_POST["professor_ssn"];
  // TO DO: fix the sql command to sastify section a for Professor,
  // check project assigment for more info.
-$select = "SELECT course_title, section_class_room, section_meeting_day, section_beginning_day, section_ending_day
+$sql = "SELECT course_title, section_class_room, section_meeting_day, section_beginning_day, section_ending_day
  FROM Course, Section, Professor
  WHERE prof_id = '$prof_ssn' AND prof_id = section_prof_id AND course_id = section_course_id ";
 
 
- $result = mysql_query($select,$link);
+ $result = mysql_query($sql,$link);
 
-  if(!$result)//check if find data correct
-  {
-    die('Could not get data: '. mysql_error());
+
+  if (!$result) {
+      echo "Could not successfully run query ($sql) from DB: " . mysql_error();
+      exit;
   }
 
+  if (mysql_num_rows($result) == 0) {
+      echo "No rows found, nothing to print so am exiting";
+      exit;
+  }
   echo "
   <table>
   <tr>
