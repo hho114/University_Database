@@ -28,7 +28,7 @@ $select = "SELECT course_title, section_class_room, section_meeting_day, section
 
 
  $result = mysql_query($select,$link);
- 
+
   if(!$result)//check if find data correct
   {
     die('Could not get data: '. mysql_error());
