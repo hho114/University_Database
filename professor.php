@@ -40,14 +40,17 @@ $sql = "SELECT course_title, section_class_room, section_meeting_day, section_be
       echo "No rows found, nothing to print so am exiting";
       exit;
   }
+  $border_data = "<td style='width:150px;border:1px solid black;'>";
+  $border_header = "<th style='width:150px;border:1px solid black;'>";
+
   echo "<table style='border: solid 1px black;'>";
   echo "
   <tr>
-  <th>Course Title</th>
-  <th>Class Room</th>
-  <th>Meeting Days</th>
-  <th>Beginning Day</th>
-  <th>Ending Day</th>
+  " .$border_header. "Course Title</th>
+    " .$border_header. "Class Room</th>
+    " .$border_header. "Meeting Days</th>
+    " .$border_header. "Beginning Day</th>
+    " .$border_header. "Ending Day</th>
   </tr>";
    while($row = mysql_fetch_assoc($result))
    {
