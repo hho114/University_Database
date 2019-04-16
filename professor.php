@@ -43,7 +43,7 @@ $select = "SELECT course_title, section_class_room, section_meeting_day, section
   <th>Beginning Day</th>
   <th>Ending Day</th>
   </tr>";
-   for($row = $result->fetch_assoc())
+   for($row = mysql_fetch_assoc($result))
    {
    echo "
    <tr>
