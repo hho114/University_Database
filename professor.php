@@ -34,18 +34,29 @@ $select = "SELECT course_title, section_class_room, section_meeting_day, section
     die('Could not get data: '. mysql_error());
   }
 
-   for($i=0; $i<mysql_numrows($result); $i++)
+  echo "
+  <table>
+  <tr>
+  <th>Course Title</th>
+  <th>Class Room</th>
+  <th>Meeting Days</th>
+  <th>Beginning Day</th>
+  <th>Ending Day</th>
+  </tr>";
+   for($row = $result->fetch_assoc())
    {
-
-   echo "Course Title: ", mysql_result($result,$i,course_title), "<br>";
-   echo "Class Room: ", mysql_result($result,$i,section_class_room), "<br>";
-   echo "Meeting Days: ", mysql_result($result,$i,section_meeting_day), "<br>";
-   echo "Beginning Day: ", mysql_result($result,$i,section_beginning_day), "<br>";
-   echo "Ending Day: ", mysql_result($result,$i,section_ending_day), "<br>", "<br>";
+   echo "
+   <tr>
+   <td>".$row["course_title"]."</td>
+   <td>".$row["section_class_room"]."</td>
+   <td>".$row["section_meeting_day"]."</td>
+   <td>".$row["section_beginning_day"]."</td>
+   <td>".$row["section_ending_day"]."</td>
+   </tr>";
    }
+   echo "</table>";
 
-   echo "Fetched data successfully\n";
-
+   echo "\nFetched data successfully\n";
 
 mysql_close($link);
  ?>
