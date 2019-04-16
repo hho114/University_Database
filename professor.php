@@ -39,27 +39,33 @@ $sql = "SELECT course_title, section_class_room, section_meeting_day, section_be
       echo "No rows found, nothing to print so am exiting";
       exit;
   }
-  echo "
-  <table>
-  <tr>
-  <th>Course Title</th>
-  <th>Class Room</th>
-  <th>Meeting Days</th>
-  <th>Beginning Day</th>
-  <th>Ending Day</th>
-  </tr>";
+  // echo "
+  // <table>
+  // <tr>
+  // <th>Course Title</th>
+  // <th>Class Room</th>
+  // <th>Meeting Days</th>
+  // <th>Beginning Day</th>
+  // <th>Ending Day</th>
+  // </tr>";
    for($row = mysql_fetch_assoc($result))
    {
-   echo "
-   <tr>
-   <td>".$row["course_title"]."</td>
-   <td>".$row["section_class_room"]."</td>
-   <td>".$row["section_meeting_day"]."</td>
-   <td>".$row["section_beginning_day"]."</td>
-   <td>".$row["section_ending_day"]."</td>
-   </tr>";
+
+    echo $row["course_title"];
+    echo $row["section_class_room"];
+    echo $row["section_meeting_day"];
+    echo $row["section_beginning_day"];
+    echo $row["section_ending_day"];
+   // echo "
+   // <tr>
+   // <td>".$row["course_title"]."</td>
+   // <td>".$row["section_class_room"]."</td>
+   // <td>".$row["section_meeting_day"]."</td>
+   // <td>".$row["section_beginning_day"]."</td>
+   // <td>".$row["section_ending_day"]."</td>
+   // </tr>";
    }
-   echo "</table>";
+   //echo "</table>";
 
    echo "\nFetched data successfully\n";
 
