@@ -46,7 +46,7 @@ $sql = "SELECT enroll_grade, course_title, Count(enroll_grade) as 'Count'
 
  while($row = mysql_fetch_assoc($result))
  {
-   $retrievedGrades[$row["enroll_grade"]] = (int) $row["Count"];
+   $retrievedGrades[$row["enroll_grade"]] = $row["Count"];
  }
 
  $grades = array_merge(
