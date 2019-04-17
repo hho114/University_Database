@@ -42,7 +42,7 @@ $sql = "SELECT course_title, enroll_grade, stu_first_name, stu_last_name, stu_cw
  $border_data = "<td style='width:150px;border:1px solid black;'>";
  $border_header = "<th style='width:150px;border:1px solid black;'>";
 
-echo mysql_result($result,$i,stu_first_name).",".mysql_result($result,$i,stu_last_name)."<br>";
+echo mysql_result($result,$i,stu_first_name).", ".mysql_result($result,$i,stu_last_name)."<br>";
 echo "CWID: ".$stu_id."<br>";
  echo "<table style='border: solid 1px black;'>";
  echo "
