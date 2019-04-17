@@ -61,9 +61,8 @@ $sql = "SELECT course_title, enroll_grade
   echo "</table>";
 
 
+ //echo "Fetched data successfully\n";
 
-
- echo "Fetched data successfully\n";
  mysql_close($link);
 
  ?>
