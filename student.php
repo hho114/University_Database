@@ -21,7 +21,7 @@ if (!$link)
 
 $stu_id = $_POST["student_cwid"];
 //use SQL SELECT to query data
-$sql = "SELECT course_title, enroll_grade
+$sql = "SELECT course_title, enroll_grade, stu_first_name, stu_last_name, stu_cwid
 	FROM Enrollment, Course, Section, Student
 	WHERE  stu_cwid = enroll_stu_cwid AND enroll_section_id = section_id
   AND section_course_id = course_id AND enroll_stu_cwid =  '$stu_id'";
@@ -42,6 +42,8 @@ $sql = "SELECT course_title, enroll_grade
  $border_data = "<td style='width:150px;border:1px solid black;'>";
  $border_header = "<th style='width:150px;border:1px solid black;'>";
 
+echo mysql_result($result,stu_first_name).",".mysql_result($result,stu_last_name)"<br>";
+echo "CWID: ".mysql_result($result,stu_cwid)"<br>";
  echo "<table style='border: solid 1px black;'>";
  echo "
  <tr>
