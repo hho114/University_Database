@@ -41,7 +41,8 @@ $sql = "SELECT enroll_grade, course_title, Count(enroll_grade) as 'Count'
      exit;
  }
 
- $gradeTemplate = array('A' => 0, 'A-' => 0, 'B+' => 0, 'B' => 0, 'B-' => 0, 'C+' => 0, 'C' => 0, 'C-' => 0, 'D+' => 0, 'D' => 0, 'D-' => 0, 'F' => 0);
+ $gradeTemplate = array('A' => 0, 'A-' => 0, 'B+' => 0, 'B' => 0, 'B-' => 0, 'C+' => 0,
+  'C' => 0, 'C-' => 0, 'D+' => 0, 'D' => 0,'D-' => 0,'F' => 0);
 
  while($row = mysql_fetch_assoc($result))
  {
@@ -57,15 +58,18 @@ $sql = "SELECT enroll_grade, course_title, Count(enroll_grade) as 'Count'
  $border_header = "<th style='width:150px;border:1px solid black;'>";
 
  echo "<table style='border: solid 1px black;'>";
- echo "<tr>
-  ".$border_header. "Grade </th>
-  " .$border_header. "Number of Students </th>
- </tr>";
-
+ echo "<tr>";
+//table title
+foreach($grades as $x => $x_value)
+{
+  echo $border_header. $x ."</th>";
+}
+echo "</tr>";
+//table data
   echo "<tr>";
-  foreach ($grades as $gradeCount)
+  foreach ($grades as $i)
   {
-      echo $border_data . $gradeCount . '</strong></td>';
+      echo $border_data . $i . '</td>';
   }
   echo "</tr>";
 
