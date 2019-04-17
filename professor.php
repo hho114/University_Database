@@ -56,11 +56,11 @@ $sql = "SELECT course_title, section_class_room, section_meeting_day, section_be
    {
    echo "
    <tr>
-   <td>".$row["course_title"]."</td>
-   <td>".$row["section_class_room"]."</td>
-   <td>".$row["section_meeting_day"]."</td>
-   <td>".$row["section_beginning_day"]."</td>
-   <td>".$row["section_ending_day"]."</td>
+   " .$border_data.$row["course_title"]."</td>
+   " .$border_data.$row["section_class_room"]."</td>
+   " .$border_data.$row["section_meeting_day"]."</td>
+   " .$border_data.$row["section_beginning_day"]."</td>
+   " .$border_data.$row["section_ending_day"]."</td>
    </tr>";
    }
    echo "</table>";
