@@ -58,6 +58,7 @@ $sql = "SELECT DISTINCT enroll_grade, course_title, Count(enroll_grade) as 'Coun
 //table title
 echo "<table style='border: solid 1px black;'>";
 echo "<tr>";
+echo $border_header. "Grades </th>";
 foreach($grades as $x => $x_value)
 {
   echo $border_header. $x ."</th>";
@@ -65,6 +66,7 @@ foreach($grades as $x => $x_value)
 echo "</tr>";
 //table data
 echo "<tr>";
+echo $border_data . "Number of Students </td>";
 foreach ($grades as $i)
 {
     echo $border_data . $i . '</td>';
