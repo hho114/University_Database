@@ -56,31 +56,20 @@ $sql = "SELECT enroll_grade, course_title, Count(enroll_grade) as 'Count'
  $border_data = "<td style='width:150px;border:1px solid black;'>";
  $border_header = "<th style='width:150px;border:1px solid black;'>";
 
+ echo "<table style='border: solid 1px black;'>";
+ echo "<tr>
+  ".$border_header. "Grade </th>
+  " .$border_header. "Number of Students </th>
+ </tr>";
 
- foreach ($grades as $gradeCount) {
-                 echo '<td><strong>' . $gradeCount . '</strong></td>';
-             }
-             echo '</tr>';
+  echo "<tr>";
+  foreach ($grades as $gradeCount)
+  {
+      echo $border_data . $gradeCount . '</strong></td>';
+  }
+  echo "</tr>";
 
-
-
- // echo "<table style='border: solid 1px black;'>";
- // echo "
- // <tr>
- // " .$border_header. "Grade </th>
- //   " .$border_header. "Number of Students </th>
- // </tr>";
- //  while($row = mysql_fetch_assoc($result))
- //  {
- //
- //  echo "
- //  <tr>
- //  " .$border_data.$row["enroll_grade"]."</td>
- //  " .$border_data.$row["Count"]."</td>
- //
- //  </tr>";
- //  }
- //  echo "</table>";
+  echo "</table>";
 
 
  mysql_close($link);
