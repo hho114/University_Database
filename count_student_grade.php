@@ -27,7 +27,7 @@ $sql = "SELECT DISTINCT enroll_grade, course_title, Count(enroll_grade) as 'Coun
  FROM Course , Section , Enrollment
  WHERE course_id = section_course_id
  AND enroll_section_id = section_id
- AND course_id = '$course_id' AND section_id = '$section_id'";
+ AND course_id = '$course_id' AND section_id = '$section_id' GROUP BY enroll_grade;";
 
  $result = mysql_query($sql,$link);
 
