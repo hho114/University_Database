@@ -31,17 +31,37 @@ $select = "SELECT DISTINCT enroll_grade, course_title, Count(enroll_grade) as 'C
 
  $result = mysql_query($select,$link);
 
- if(!$result)//check if find data correct
- {
-   die('Could not get data: '. mysql_error());
+ if (!$result) {
+     echo "Could not successfully run query ($sql) from DB: " . mysql_error();
+     exit;
  }
 
- for($i=0; $i<mysql_numrows($result); $i++)
- {
-   echo "Course Title: ", mysql_result($result,$i,course_title), "<br>";
-   echo mysql_result($result,$i,"Count"), " student(s) got: ";
-   echo mysql_result($result,$i, enroll_grade), "<br>";
+ if (mysql_num_rows($result) == 0) {
+     echo "No rows found, nothing to print so am exiting";
+     exit;
  }
+
+ 
+ $border_data = "<td style='width:150px;border:1px solid black;'>";
+ $border_header = "<th style='width:150px;border:1px solid black;'>";
+
+ echo "<table style='border: solid 1px black;'>";
+ echo "
+ <tr>
+ " .$border_header. "Grade </th>
+   " .$border_header. "Number of Students </th>
+ </tr>";
+  while($row = mysql_fetch_assoc($result))
+  {
+  echo "
+  <tr>
+  " .$border_data.$row["enroll_grade"]."</td>
+  " .$border_data.$row["Count"]."</td>
+
+  </tr>";
+  }
+  echo "</table>";
+
 
  mysql_close($link);
 
