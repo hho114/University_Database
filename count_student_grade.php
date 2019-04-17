@@ -41,26 +41,46 @@ $sql = "SELECT enroll_grade, course_title, Count(enroll_grade) as 'Count'
      exit;
  }
 
+ $gradeTemplate = array('A' => 0, 'A-' => 0, 'B+' => 0, 'B' => 0, 'B-' => 0, 'C+' => 0, 'C' => 0, 'C-' => 0, 'D+' => 0, 'D' => 0, 'D-' => 0, 'F' => 0);
+
+ while($row = mysql_fetch_assoc($result))
+ {
+   $retrievedGrades[$row["enroll_grade"]] = (int) $row["Count"];
+ }
+
+ $grades = array_merge(
+                $gradeTemplate,
+                $retrievedGrades
+            );
 
  $border_data = "<td style='width:150px;border:1px solid black;'>";
  $border_header = "<th style='width:150px;border:1px solid black;'>";
 
- echo "<table style='border: solid 1px black;'>";
- echo "
- <tr>
- " .$border_header. "Grade </th>
-   " .$border_header. "Number of Students </th>
- </tr>";
-  while($row = mysql_fetch_assoc($result))
-  {
-  echo "
-  <tr>
-  " .$border_data.$row["enroll_grade"]."</td>
-  " .$border_data.$row["Count"]."</td>
 
-  </tr>";
-  }
-  echo "</table>";
+ foreach ($grades as $gradeCount) {
+                 echo '<td><strong>' . $gradeCount . '</strong></td>';
+             }
+             echo '</tr>';
+
+
+
+ // echo "<table style='border: solid 1px black;'>";
+ // echo "
+ // <tr>
+ // " .$border_header. "Grade </th>
+ //   " .$border_header. "Number of Students </th>
+ // </tr>";
+ //  while($row = mysql_fetch_assoc($result))
+ //  {
+ //
+ //  echo "
+ //  <tr>
+ //  " .$border_data.$row["enroll_grade"]."</td>
+ //  " .$border_data.$row["Count"]."</td>
+ //
+ //  </tr>";
+ //  }
+ //  echo "</table>";
 
 
  mysql_close($link);
