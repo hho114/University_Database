@@ -1,4 +1,6 @@
-
+h1, h2{
+  color: white;
+}
 
 /* Style inputs, select elements and textareas */
 input[type=text], select, textarea{
