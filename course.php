@@ -79,13 +79,6 @@ $sql = "SELECT course_id, course_title, section_id, section_class_room, section_
 
  ?>
 
- <button onclick="goBack()">Go Back</button>
-
- <script>
- function goBack() {
-     window.history.back();
- }
- </script>
 
  </body>
  </html>
