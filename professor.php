@@ -64,18 +64,12 @@ $sql = "SELECT course_title, section_class_room, section_meeting_day, section_be
    </tr>";
    }
    echo "</table>";
-   echo "\nFetched data successfully\n";
+  
 
 mysql_close($link);
  ?>
 
- <button onclick="goBack()">Go Back</button>
 
- <script>
- function goBack() {
-     window.history.back();
- }
- </script>
 
  </body>
  </html>
