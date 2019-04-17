@@ -49,38 +49,34 @@ $sql = "SELECT enroll_grade, course_title, Count(enroll_grade) as 'Count'
    $retrievedGrades[$row["enroll_grade"]] = $row["Count"];
  }
 
- $grades = array_merge(
-                $gradeTemplate,
-                $retrievedGrades
-            );
+//merge two arrays
+ $grades = array_merge($gradeTemplate,$retrievedGrades);
 
  $border_data = "<td style='width:150px;border:1px solid black;'>";
  $border_header = "<th style='width:150px;border:1px solid black;'>";
 
- echo "<table style='border: solid 1px black;'>";
- echo "<tr>";
 //table title
+echo "<table style='border: solid 1px black;'>";
+echo "<tr>";
 foreach($grades as $x => $x_value)
 {
   echo $border_header. $x ."</th>";
 }
 echo "</tr>";
 //table data
-  echo "<tr>";
-  foreach ($grades as $i)
-  {
-      echo $border_data . $i . '</td>';
-  }
-  echo "</tr>";
+echo "<tr>";
+foreach ($grades as $i)
+{
+    echo $border_data . $i . '</td>';
+}
+echo "</tr>";
 
-  echo "</table>";
+echo "</table>";
 
 
  mysql_close($link);
 
  ?>
-
-
 
  </body>
  </html>

@@ -2,6 +2,7 @@
 <body>
 
 <?php
+
 $servername = "ecsmysql";
 $username = "cs332t15";
 $password = "Oaj2chea";
@@ -23,7 +24,7 @@ $course_id =$_POST["stu_course_num"];
  // TO DO: fix the sql command to sastify section a for Student,
  // check project assigment for more info.
 $sql = "SELECT course_id, course_title, section_id, section_class_room, section_meeting_day,
-		section_beginning_day, section_ending_day, (section_amount_of_seat-COUNT(enroll_stu_cwid)) as 'Seats'
+		section_beginning_day, section_ending_day, (section_amount_of_seat-COUNT(enroll_stu_cwid)) as 'num_enrolled'
 
 	FROM Course, Enrollment, Section
 	WHERE enroll_section_id = section_id
@@ -56,7 +57,7 @@ $sql = "SELECT course_id, course_title, section_id, section_class_room, section_
     " .$border_header. "Meeting Days </th>
     " .$border_header. "Start Date </th>
     " .$border_header. "End Date </th>
-    " .$border_header. "Number of Seats </th>
+    " .$border_header. "Student Enrolled </th>
 
   </tr>";
    while($row = mysql_fetch_assoc($result))
@@ -69,7 +70,7 @@ $sql = "SELECT course_id, course_title, section_id, section_class_room, section_
    " .$border_data.$row["section_meeting_day"]."</td>
    " .$border_data.$row["section_beginning_day"]."</td>
    " .$border_data.$row["section_ending_day"]."</td>
-   " .$border_data.$row["Seats"]."</td>
+   " .$border_data.$row["num_enrolled"]."</td>
 
    </tr>";
    }
@@ -78,7 +79,6 @@ $sql = "SELECT course_id, course_title, section_id, section_class_room, section_
  mysql_close($link);
 
  ?>
-
 
  </body>
  </html>
