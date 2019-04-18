@@ -1,6 +1,8 @@
-h1{
+#main {
   color: white;
+  background-color: #446995;
 }
+
 
 /* Style inputs, select elements and textareas */
 input[type=text], select, textarea{
@@ -108,7 +110,7 @@ input[type=submit] {
 }
 
 footer {
-  background-color: #777;
+  background-color: #446995;
   padding: 10px;
   text-align: center;
   color: white;
