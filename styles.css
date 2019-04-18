@@ -2,6 +2,10 @@
   color: white;
 }
 
+#footer {
+   color: white;
+}
+
 body{
   background-color: #446995;
 }
@@ -109,8 +113,4 @@ input[type=submit] {
   text-align: left;
   background-color: #4CAF50;
   color: white;
-}
-
-#footer {
-   color: white;
 }
