@@ -1,8 +1,10 @@
-#main {
+#header {
   color: white;
-  background-color: #446995;
 }
 
+body{
+  background-color: #446995;
+}
 
 /* Style inputs, select elements and textareas */
 input[type=text], select, textarea{
@@ -109,9 +111,6 @@ input[type=submit] {
   color: white;
 }
 
-footer {
-  background-color: #446995;
-  padding: 10px;
-  text-align: center;
-  color: white;
+#footer {
+   color: white;
 }
