@@ -108,5 +108,8 @@ input[type=submit] {
 }
 
 footer {
-  display: block;
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
 }
