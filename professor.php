@@ -3,7 +3,6 @@
 <html>
 <body>
 <?php
-include 'index.html';
 include 'style.css';
 
 $servername = "ecsmysql";
