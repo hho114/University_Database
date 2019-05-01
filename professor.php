@@ -1,5 +1,7 @@
-<html>
-<body>
+
+
+
+
 
 <?php
 
@@ -8,6 +10,7 @@ $username = "cs332t15";
 $password = "Oaj2chea";
 $mydb = "mariadb";
 
+$GLOBALS['print'] = "";
 // username and password need to be replaced by your username and password
 // $link = mysql_connect('ecsmysql', 'username', 'password');
 $link = mysql_connect($servername, $username, $password, $mydb);
@@ -32,19 +35,19 @@ $sql = "SELECT course_title, section_class_room, section_meeting_day, section_be
 
 
   if (!$result) {
-      echo "Could not successfully run query ($sql) from DB: " . mysql_error();
+      print.= "Could not successfully run query ($sql) from DB: " . mysql_error();
       exit;
   }
 
   if (mysql_num_rows($result) == 0) {
-      echo "No rows found, nothing to print so am exiting";
+      print.= "No rows found, nothing to print so am exiting";
       exit;
   }
   $border_data = "<td style='width:150px;border:1px solid black;'>";
   $border_header = "<th style='width:150px;border:1px solid black;'>";
 
-  echo "<table style='border: solid 1px black;'>";
-  echo "
+  print.= "<table style='border: solid 1px black;'>";
+  print.= "
   <tr>
   " .$border_header. "Course Title</th>
     " .$border_header. "Class Room</th>
@@ -54,7 +57,7 @@ $sql = "SELECT course_title, section_class_room, section_meeting_day, section_be
   </tr>";
    while($row = mysql_fetch_assoc($result))
    {
-   echo "
+   print.= "
    <tr>
    " .$border_data.$row["course_title"]."</td>
    " .$border_data.$row["section_class_room"]."</td>
@@ -63,13 +66,18 @@ $sql = "SELECT course_title, section_class_room, section_meeting_day, section_be
    " .$border_data.$row["section_ending_day"]."</td>
    </tr>";
    }
-   echo "</table>";
+   print.= "</table>";
 
 
 mysql_close($link);
- ?>
+
+?>
 
 
+<html>
+<body>
+
+<p> <?php echo $print ?> </p>
 
  </body>
  </html>
