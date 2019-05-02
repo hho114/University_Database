@@ -65,6 +65,23 @@ $sql = "SELECT course_title, section_class_room, section_meeting_day, section_be
     </style>
 </head>
 <body>
+  <div class="container-fluid bg-1 text-center">
+    <h3>CPSC 332 Spring 2019 Team Project</h3>
+    <img src="profile.jpg" class="img-circle" alt="Bird" width="250" height="250">
+    <h3>Alex Ho & Marco Chavez & Caesar Mier</h3>
+  </div>
+
+  <div class="container-fluid bg-2 text-left">
+
+      <ul class="nav nav-pills">
+      <li class="active"><a data-toggle="pill" href="#home">Home</a></li>
+      <li><a data-toggle="pill" href="#professors">Professor</a></li>
+      <li><a data-toggle="pill" href="#students">Student</a></li>
+
+    </ul>
+
+
+
   <table class="table table-striped table-bordered ">
      <thead>
          <tr>
