@@ -1,7 +1,6 @@
 
 
-<html>
-<body>
+
 <?php
 include 'index.html';
 
@@ -60,7 +59,3 @@ $sql = "SELECT course_title, section_class_room, section_meeting_day, section_be
 mysql_close($link);
 
 ?>
-
-
- </body>
- </html>
