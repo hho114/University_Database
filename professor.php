@@ -43,31 +43,19 @@ $sql = "SELECT course_title, section_class_room, section_meeting_day, section_be
       echo "No rows found, nothing to print so am exiting";
       exit;
   }
-  $border_data = "<td style='width:150px;border:1px solid black;'>";
-  $border_header = "<th style='width:150px;border:1px solid black;'>";
 
-  echo "<table style='border: solid 1px black;'>";
-  echo "
-  <tr>
-  " .$border_header. "Course Title</th>
-    " .$border_header. "Class Room</th>
-    " .$border_header. "Meeting Days</th>
-    " .$border_header. "Beginning Day</th>
-    " .$border_header. "Ending Day</th>
-  </tr>";
+
+
    while($row = mysql_fetch_assoc($result))
    {
-   echo "
-   <tr>
-   " .$border_data.$row["course_title"]."</td>
-   " .$border_data.$row["section_class_room"]."</td>
-   " .$border_data.$row["section_meeting_day"]."</td>
-   " .$border_data.$row["section_beginning_day"]."</td>
-   " .$border_data.$row["section_ending_day"]."</td>
+   echo '<tr>'
+   .'<td>'.$row["course_title"]."</td>
+   " .'<td>'.$row["section_class_room"]."</td>
+   " .'<td>'.$row["section_meeting_day"]."</td>
+   " .'<td>'.$row["section_beginning_day"]."</td>
+   " .'<td>'.$row["section_ending_day"]."</td>
    </tr>";
    }
-   echo "</table>";
-
 
 mysql_close($link);
 
