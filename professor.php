@@ -57,7 +57,7 @@ $sql = "SELECT course_title, section_class_room, section_meeting_day, section_be
 <body>
 
 <div class="container-fluid text-center">
-  <table class="table table-striped table-bordered ">
+  <table class="table table-striped table-bordered text-center">
      <thead>
          <tr class="info">
              <th>Title</th>
