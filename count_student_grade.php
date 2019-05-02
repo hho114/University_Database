@@ -63,11 +63,11 @@ $sql = "SELECT DISTINCT enroll_grade, course_title, Count(enroll_grade) as 'Coun
 </head>
 <body>
   <div class="container-fluid bg-success text-center">
-    <h3>Professor Assign Courses</h3>
+    <h3> What total grades count in Course</h3>
   </div>
   <table class="table table-striped table-bordered">
     <thead>
-    <tr>
+    <tr class="info text-center">
     <th>Grades</th>
 
       <?php
@@ -79,7 +79,7 @@ $sql = "SELECT DISTINCT enroll_grade, course_title, Count(enroll_grade) as 'Coun
     <?php } ?>
     </tr>
   </thead>
-    //table data
+
     <tbody>
 
     <td>Number of Students </td>
