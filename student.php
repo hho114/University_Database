@@ -40,7 +40,7 @@ $sql = "SELECT course_title, enroll_grade
  }
 
  ?>
-
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
