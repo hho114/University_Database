@@ -1,5 +1,3 @@
-<html>
-<body>
 
 <?php
 $servername = "ecsmysql";
@@ -31,13 +29,9 @@ $sql = "SELECT DISTINCT enroll_grade, course_title, Count(enroll_grade) as 'Coun
 
  $result = mysql_query($sql,$link);
 
- if (!$result) {
-     echo "Could not successfully run query ($sql) from DB: " . mysql_error();
-     exit;
- }
 
  if (mysql_num_rows($result) == 0) {
-     echo "No rows found, nothing to print so am exiting";
+     echo "No data found, nothing to print";
      exit;
  }
 
@@ -52,33 +46,57 @@ $sql = "SELECT DISTINCT enroll_grade, course_title, Count(enroll_grade) as 'Coun
 //merge two arrays
  $grades = array_merge($gradeTemplate,$retrievedGrades);
 
- $border_data = "<td style='width:150px;border:1px solid black;'>";
- $border_header = "<th style='width:150px;border:1px solid black;'>";
+?>
+
+
 
 //table title
-echo "<table style='border: solid 1px black;'>";
-echo "<tr>";
-echo $border_header. "Grades </th>";
-foreach($grades as $x => $x_value)
-{
-  echo $border_header. $x ."</th>";
-}
-echo "</tr>";
-//table data
-echo "<tr>";
-echo $border_data . "Number of Students </td>";
-foreach ($grades as $i)
-{
-    echo $border_data . $i . '</td>';
-}
-echo "</tr>";
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-echo "</table>";
+</head>
+<body>
+  <div class="container-fluid bg-success text-center">
+    <h3>Professor Assign Courses</h3>
+  </div>
+  <table class="table table-striped table-bordered">
+    <thead>
+    <tr>
+    <th>Grades</th>
+
+      <?php
+    foreach($grades as $x => $x_value)
+    {
+      ?>
+      <th>  <?php  echo $x; ?> </th>
+
+    <?php } ?>
+    </tr>
+  </thead>
+    //table data
+    <tbody>
+
+    <td>Number of Students </td>
+    <?php foreach ($grades as $i)
+    {?>
+      <tr>
+        <td><?php echo $i; ?> </td>
+        </tr>
+    <?php}?>
+
+  </tbody>
+</table>
 
 
+</html>
+</body>
+<?php
  mysql_close($link);
 
  ?>
-
- </body>
- </html>
