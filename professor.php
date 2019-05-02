@@ -58,8 +58,10 @@ $sql = "SELECT course_title, section_class_room, section_meeting_day, section_be
   <div class="container-fluid bg-success text-center">
     <h3>Professor Assign Courses</h3>
   </div>
-  
+
 <div class="container-fluid text-center">
+
+
   <table class="table table-striped table-bordered">
      <thead>
          <tr class="info text-center">
