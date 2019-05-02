@@ -3,7 +3,7 @@
 <html>
 <body>
 <?php
-include 'style.css';
+include 'index.html';
 
 $servername = "ecsmysql";
 $username = "cs332t15";
