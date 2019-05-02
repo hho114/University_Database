@@ -2,7 +2,6 @@
 
 
 <?php
-include 'index.html';
 
 $servername = "ecsmysql";
 $username = "cs332t15";
@@ -43,19 +42,50 @@ $sql = "SELECT course_title, section_class_room, section_meeting_day, section_be
       exit;
   }
 
+?>
 
-
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <table class="table table-striped table-bordered ">
+     <thead>
+         <tr>
+             <th>Title</th>
+             <th>Classrooms</th>
+             <th>Meeting Days</th>
+             <th>Beginning Date</th>
+             <th>End Date</th>
+         </tr>
+     </thead>
+     <tbody>
+         <tr>
+   </table>
+  <?php
    while($row = mysql_fetch_assoc($result))
    {
-   echo '<tr>'
-   .'<td>'.$row["course_title"]."</td>
-   " .'<td>'.$row["section_class_room"]."</td>
-   " .'<td>'.$row["section_meeting_day"]."</td>
-   " .'<td>'.$row["section_beginning_day"]."</td>
-   " .'<td>'.$row["section_ending_day"]."</td>
-   </tr>";
-   }
+     ?>
+   <tr>
+   <td> <?php$row["course_title"];?> </td>
+   <td> <?php$row["section_class_room"];?></td>
+   <td><?php["section_meeting_day"];?></td>
+   <td><?php$row["section_beginning_day"];?></td>
+   <td><?php$row["section_ending_day"];?></td>
+   </tr>"
 
+   <?php }  ?>
+
+ </tr>
+</tbody>
+ </body>
+ </html>
+ 
+<?php
 mysql_close($link);
-
 ?>
