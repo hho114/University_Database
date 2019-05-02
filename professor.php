@@ -22,7 +22,7 @@ if (!$link)
 
  mysql_select_db($username,$link);
 
-$prof_ssn = $_GET["professor_ssn"];
+$prof_ssn = $_POST["professor_ssn"];
  // TO DO: fix the sql command to sastify section a for Professor,
  // check project assigment for more info.
 $sql = "SELECT course_title, section_class_room, section_meeting_day, section_beginning_day, section_ending_day
