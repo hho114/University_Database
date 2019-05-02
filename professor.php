@@ -65,7 +65,7 @@ $sql = "SELECT course_title, section_class_room, section_meeting_day, section_be
     </style>
 </head>
 <body>
-  <table class="table bg-2 table-striped table-bordered ">
+  <table class="table table-striped table-bordered ">
      <thead>
          <tr>
              <th>Title</th>
@@ -81,11 +81,11 @@ $sql = "SELECT course_title, section_class_room, section_meeting_day, section_be
    {
      ?>
    <tr>
-   <td><?php$row["course_title"];?> </td>
-   <td> <?php$row["section_class_room"];?></td>
-   <td><?php["section_meeting_day"];?></td>
-   <td><?php$row["section_beginning_day"];?></td>
-   <td><?php$row["section_ending_day"];?></td>
+   <td><?php echo $row["course_title"];?> </td>
+   <td> <?php echo $row["section_class_room"];?></td>
+   <td><?php echo $row["section_meeting_day"];?></td>
+   <td><?php echo $row["section_beginning_day"];?></td>
+   <td><?php echo $row["section_ending_day"];?></td>
    </tr>
 
    <?php }  ?>
