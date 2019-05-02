@@ -56,6 +56,7 @@ $sql = "SELECT course_title, section_class_room, section_meeting_day, section_be
 </head>
 <body>
 
+<div class="container-fluid text-center">
   <table class="table table-striped table-bordered ">
      <thead>
          <tr class="info">
@@ -81,20 +82,21 @@ $sql = "SELECT course_title, section_class_room, section_meeting_day, section_be
 
    <?php }  ?>
 
-</tbody>
-</table>
+  </tbody>
+  </table>
 
-<div class="text-center">
-<button type="button" class="btn btn-primary" onclick="goBack()">Go Back</button>
+  <div class="text-center">
+  <button type="button" class="btn btn-primary" onclick="goBack()">Go Back</button>
+  </div>
+
+  <script>
+  function goBack() {
+    window.history.back();
+  }
+  </script>
 </div>
-
-<script>
-function goBack() {
-  window.history.back();
-}
-</script>
- </body>
- </html>
+</body>
+</html>
 
 <?php
 mysql_close($link);
