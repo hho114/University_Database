@@ -12,9 +12,10 @@
       color: #ffffff;
     }
     .bg-2 {
-      background-color: #474e5d; /* Dark Blue */
-      color: #ffffff;
+      background-color: #F6F6F6; /* Dark Blue */
+      color: #000000;
     }
+    
     </style>
 </head>
 <body>
@@ -44,7 +45,7 @@
       <div id="professors" class="tab-pane fade">
         <h3>For Professor</h3>
         <div class="container">
-         <form class="form-inline" action="professor.php" method="POST">
+         <form class="form-group" action="professor.php" method="POST">
            <!-- Search by professor ssn -->
            <div class="row">
                <label for="professor_ssn">SSN:</label>
@@ -54,7 +55,7 @@
            </div>
          </form>
 
-         <form class="form-inline" action="count_student_grade.php" method="POST">
+         <form class="form-group" action="count_student_grade.php" method="POST">
            <!-- Search by course number and section number -->
            <div class="row">
                <label for="course_num">Course Number:</label>
@@ -75,7 +76,7 @@
       <div id="students" class="tab-pane fade">
         <h3>For Student</h3>
         <div class="container">
-         <form class="form-inline" action="course.php" method="POST">
+         <form class="form-group" action="course.php" method="POST">
            <!-- Search by professor ssn -->
            <div class="row">
                <label for="stu_course_num">Course Number:</label>
@@ -85,7 +86,7 @@
            </div>
          </form>
 
-         <form class="form-inline" action="student.php" method="POST">
+         <form class="form-group" action="student.php" method="POST">
            <!-- Search by course number and section number -->
            <div class="row">
                <label for="student_cwid">CWID:</label>
