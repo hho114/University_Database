@@ -84,7 +84,9 @@ $sql = "SELECT course_title, section_class_room, section_meeting_day, section_be
 </tbody>
 </table>
 
-<button onclick="goBack()">Go Back</button>
+<div class="text-center">
+<button type="button" class="btn btn-primary" onclick="goBack()">Go Back</button>
+</div>
 
 <script>
 function goBack() {
