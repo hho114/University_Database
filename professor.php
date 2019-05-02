@@ -17,7 +17,7 @@ if (!$link)
   die('Could not connect: ' . mysql_error());
 
 }
- echo 'Connected successfully<p>';
+
 
  mysql_select_db($username,$link);
 
@@ -38,7 +38,7 @@ $sql = "SELECT course_title, section_class_room, section_meeting_day, section_be
   }
 
   if (mysql_num_rows($result) == 0) {
-      echo "No rows found, nothing to print so am exiting";
+      echo "No data found, nothing to print";
       exit;
   }
 
@@ -52,39 +52,13 @@ $sql = "SELECT course_title, section_class_room, section_meeting_day, section_be
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <style>
-    .bg-1 {
-      background-color: #1abc9c; /* Green */
-      color: #ffffff;
-    }
-    .bg-2 {
-      background-color: #F6F6F6; /* Dark Blue */
-      color: #000000;
-    }
 
-    </style>
 </head>
 <body>
-  <div class="container-fluid bg-1 text-center">
-    <h3>CPSC 332 Spring 2019 Team Project</h3>
-    <img src="profile.jpg" class="img-circle" alt="Bird" width="250" height="250">
-    <h3>Alex Ho & Marco Chavez & Caesar Mier</h3>
-  </div>
-
-  <div class="container-fluid bg-2 text-left">
-
-      <ul class="nav nav-pills">
-      <li class="active"><a data-toggle="pill" href="#home">Home</a></li>
-      <li><a data-toggle="pill" href="#professors">Professor</a></li>
-      <li><a data-toggle="pill" href="#students">Student</a></li>
-
-    </ul>
-
-
 
   <table class="table table-striped table-bordered ">
      <thead>
-         <tr>
+         <tr class="info">
              <th>Title</th>
              <th>Classrooms</th>
              <th>Meeting Days</th>
@@ -109,6 +83,14 @@ $sql = "SELECT course_title, section_class_room, section_meeting_day, section_be
 
 </tbody>
 </table>
+
+<button onclick="goBack()">Go Back</button>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
  </body>
  </html>
 
