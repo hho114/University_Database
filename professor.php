@@ -52,9 +52,20 @@ $sql = "SELECT course_title, section_class_room, section_meeting_day, section_be
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+    .bg-1 {
+      background-color: #1abc9c; /* Green */
+      color: #ffffff;
+    }
+    .bg-2 {
+      background-color: #F6F6F6; /* Dark Blue */
+      color: #000000;
+    }
+
+    </style>
 </head>
 <body>
-  <table class="table table-striped table-bordered ">
+  <table class="table bg-2 table-striped table-bordered ">
      <thead>
          <tr>
              <th>Title</th>
@@ -70,7 +81,7 @@ $sql = "SELECT course_title, section_class_room, section_meeting_day, section_be
    {
      ?>
    <tr>
-   <td> <?php$row["course_title"];?> </td>
+   <td><?php$row["course_title"];?> </td>
    <td> <?php$row["section_class_room"];?></td>
    <td><?php["section_meeting_day"];?></td>
    <td><?php$row["section_beginning_day"];?></td>
