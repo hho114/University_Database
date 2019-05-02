@@ -44,6 +44,8 @@
 
       <div id="professors" class="tab-pane fade">
 
+        <div class="panel panel-info"></div>
+
         <div class="container">
          <form class="form-group" action="professor.php" method="post">
            <!-- Search by professor ssn -->
@@ -82,7 +84,7 @@
 
 
       <div id="students" class="tab-pane fade">
-
+        <div class="panel panel-info"></div>
         <div class="container">
          <form class="form-group" action="course.php" method="POST">
            <!-- Search by professor ssn -->
@@ -105,6 +107,12 @@
          </form>
 
         </div>
+        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">For Student</button>
+          <div id="demo" class="collapse">
+            Students will be able to search the database by inputting their course number. 
+            Doing so will list the sections of the course, including the classrooms, the meeting days and time, and the number of students enrolled in each section.
+            Also, by inputting their campus-wide ID, a list of all courses the student has attempted and the grades. These features will help students find new courses to take as well as staying on top of grades.
+          </div>
       </div>
 
     </div>
