@@ -6,6 +6,23 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script>
+  $('#myTab a').click(function(e) {
+  e.preventDefault();
+  $(this).tab('show');
+});
+
+// store the currently selected tab in the hash value
+$("ul.nav-tabs > li > a").on("shown.bs.tab", function(e) {
+  var id = $(e.target).attr("href").substr(1);
+  window.location.hash = id;
+});
+
+// on load of the page: switch to the currently selected tab
+var hash = window.location.hash;
+$('#myTab a[href="' + hash + '"]').tab('show');
+ </script>
+
   <style>
     .bg-1 {
       background-color: #1abc9c; /* Green */
@@ -37,7 +54,7 @@
 
 
     <div class="tab-content">
-      <div id="home" class="tab-pane fade">
+      <div id="home" class="tab-pane fade in active">
         <h3>Team Blog</h3>
         <div class="panel panel-info"></div>
         <div class="media">
