@@ -73,17 +73,17 @@ $sql = "SELECT course_title, section_class_room, section_meeting_day, section_be
          </tr>
      </thead>
      <tbody>
-  <?php
-   while($row = mysql_fetch_assoc($result))
-   {
-     ?>
-   <tr>
-   <td><?php echo $row["course_title"];?> </td>
-   <td> <?php echo $row["section_class_room"];?></td>
-   <td><?php echo $row["section_meeting_day"];?></td>
-   <td><?php echo $row["section_beginning_day"];?></td>
-   <td><?php echo $row["section_ending_day"];?></td>
-   </tr>
+      <?php
+     while($row = mysql_fetch_assoc($result))
+     {
+       ?>
+     <tr>
+     <td><?php echo $row["course_title"];?> </td>
+     <td><?php echo $row["section_class_room"];?></td>
+     <td><?php echo $row["section_meeting_day"];?></td>
+     <td><?php echo $row["section_beginning_day"];?></td>
+     <td><?php echo $row["section_ending_day"];?></td>
+     </tr>
 
    <?php }  ?>
 
