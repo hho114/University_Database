@@ -84,10 +84,13 @@ $sql = "SELECT DISTINCT enroll_grade, course_title, Count(enroll_grade) as 'Coun
      <tbody>
        <tr>
         <td>Number of Students </td>
-        <?php foreach ($grades as $i)
-        {?>
-            <td><?php echo $i; ?> </td>
-        <?php}?>
+        <?php
+        foreach ($grades as $x => $x_value)
+        {
+          ?>
+            <td> <?php echo $x_value; ?> </td>
+
+        <?php } ?>
       </tr>
   </tbody>
   </table>
