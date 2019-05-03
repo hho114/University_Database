@@ -50,6 +50,54 @@ $sql = "SELECT DISTINCT enroll_grade, course_title, Count(enroll_grade) as 'Coun
 ?>
 
 
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+  <div class="container-fluid bg-success text-center">
+    <h3>Count Grade Courses</h3>
+  </div>
+
+<div class="container-fluid text-center">
+
+
+  <table class="table table-striped table-bordered">
+     <thead>
+         <tr class="info text-center">
+             <th>Grades</th>
+             <?php
+              foreach($grades as $x => $x_value)
+              {
+                ?>
+                <th>  <?php  echo $x; ?> </th>
+
+              <?php } ?>
+         </tr>
+     </thead>
+     <tbody>
+
+  </tbody>
+  </table>
+
+  <div class="text-center">
+  <button type="button" class="btn btn-primary" onclick="goBack()">Go Back</button>
+  </div>
+
+  <script>
+  function goBack() {
+    window.history.back();
+  }
+  </script>
+</div>
+</body>
+</html>
 
 
 <?php
