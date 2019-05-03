@@ -41,6 +41,58 @@ $sql = "SELECT course_title, enroll_grade
 
  ?>
 
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+ </head>
+ <body>
+   <div class="container-fluid bg-success text-center">
+     <h3>Student Enrollment Grades</h3>
+   </div>
+
+ <div class="container-fluid text-center">
+
+
+   <table class="table table-striped table-bordered">
+      <thead>
+          <tr class="info text-center">
+            <th>Course Title</th>
+            <th>Grade</th>
+          </tr>
+      </thead>
+      <tbody>
+        <?php
+       while($row = mysql_fetch_assoc($result))
+       {
+         ?>
+       <tr>
+       <td><?php echo $row["course_title"];?></td>
+       <td><?php echo $row["enroll_grade"];?></td>
+       </tr>
+       <?php } ?>
+
+   </tbody>
+   </table>
+
+   <div class="text-center">
+   <button type="button" class="btn btn-primary" onclick="goBack()">Go Back</button>
+   </div>
+
+   <script>
+   function goBack() {
+     window.history.back();
+   }
+   </script>
+ </div>
+ </body>
+ </html>
+
 <?php
  mysql_close($link);
 
