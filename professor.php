@@ -8,7 +8,7 @@ $username = "cs332t15";
 $password = "Oaj2chea";
 $mydb = "mariadb";
 
-//$GLOBALS['print'] = "";
+
 // username and password need to be replaced by your username and password
 // $link = mysql_connect('ecsmysql', 'username', 'password');
 $link = mysql_connect($servername, $username, $password, $mydb);

@@ -13,7 +13,7 @@ if (!$link)
   die('Could not connect: ' . mysql_error());
 
 }
- echo 'Connected successfully<p>';
+
 
  mysql_select_db($username,$link);
 
@@ -50,7 +50,7 @@ $sql = "SELECT DISTINCT enroll_grade, course_title, Count(enroll_grade) as 'Coun
 
 
 
-//table title
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -65,6 +65,7 @@ $sql = "SELECT DISTINCT enroll_grade, course_title, Count(enroll_grade) as 'Coun
   <div class="container-fluid bg-success text-center">
     <h3> What total grades count in Course</h3>
   </div>
+  
   <table class="table table-striped table-bordered">
     <thead>
     <tr class="info text-center">
@@ -81,15 +82,13 @@ $sql = "SELECT DISTINCT enroll_grade, course_title, Count(enroll_grade) as 'Coun
   </thead>
 
     <tbody>
-
+      <tr>
     <td>Number of Students </td>
     <?php foreach ($grades as $i)
     {?>
-      <tr>
         <td><?php echo $i; ?> </td>
-        </tr>
     <?php}?>
-
+      </tr>
   </tbody>
 </table>
 
