@@ -15,7 +15,6 @@ if (!$link)
 
 }
 
-echo "successfully connects";
  mysql_select_db($username,$link);
 
 $course_id = $_POST["course_num"];
