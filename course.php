@@ -15,7 +15,7 @@ if (!$link)
   die('Could not connect: ' . mysql_error());
 
 }
- echo 'Connected successfully<p>';
+
 
  mysql_select_db($username,$link);
 
@@ -57,7 +57,7 @@ $sql = "SELECT course_id, course_title, section_id, section_class_room, section_
 </head>
 <body>
   <div class="container-fluid bg-success text-center">
-    <h3>Professor Assign Courses</h3>
+    <h3>Course Search</h3>
   </div>
 
 <div class="container-fluid text-center">
