@@ -11,4 +11,4 @@ Caesar Mier caesarmier@csu.fullerton.edu
 [Link to team website project ](http://bit.ly/2Pe7P4u "CPSC 332 Project")
 
 
-![](Project_Report/332 Project Report-02.png)
+![alt text](Project_Report/332 Project Report-02.png "Description")
