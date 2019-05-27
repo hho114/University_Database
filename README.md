@@ -15,27 +15,27 @@ Caesar Mier caesarmier@csu.fullerton.edu
 
 Project Description
 
-[Project Assignment](https://github.com/hho114/CSUF-CPSC-332-Project/blob/master/report/report-02.png)
+![Project Assignment](https://github.com/hho114/CSUF-CPSC-332-Project/blob/master/report/report-02.png)
 
-[Project Design](https://raw.githubusercontent.com/hho114/CSUF-CPSC-332-Project/report/report-3.png)
+![Project Design](https://raw.githubusercontent.com/hho114/CSUF-CPSC-332-Project/report/report-3.png)
 
-[Project Design](https://raw.githubusercontent.com/hho114/CSUF-CPSC-332-Project/report/report-4.png)
+![Project Design](https://raw.githubusercontent.com/hho114/CSUF-CPSC-332-Project/report/report-4.png)
 
-[Project Design](https://raw.githubusercontent.com/hho114/CSUF-CPSC-332-Project/report/report-5.png)
+![Project Design](https://raw.githubusercontent.com/hho114/CSUF-CPSC-332-Project/report/report-5.png)
 
-[Project Design](https://raw.githubusercontent.com/hho114/CSUF-CPSC-332-Project/report/report-6.png)
+![Project Design](https://raw.githubusercontent.com/hho114/CSUF-CPSC-332-Project/report/report-6.png)
 
-[Project Design](https://raw.githubusercontent.com/hho114/CSUF-CPSC-332-Project/report/report-7.png)
+![Project Design](https://raw.githubusercontent.com/hho114/CSUF-CPSC-332-Project/report/report-7.png)
 
-[Project Design](https://raw.githubusercontent.com/hho114/CSUF-CPSC-332-Project/report/report-8.png)
+![Project Design](https://raw.githubusercontent.com/hho114/CSUF-CPSC-332-Project/report/report-8.png)
 
-[Project Design](https://raw.githubusercontent.com/hho114/CSUF-CPSC-332-Project/report/report-9.png)
+![Project Design](https://raw.githubusercontent.com/hho114/CSUF-CPSC-332-Project/report/report-9.png)
 
-[Project Design](https://raw.githubusercontent.com/hho114/CSUF-CPSC-332-Project/report/report-10.png)
+![Project Design](https://raw.githubusercontent.com/hho114/CSUF-CPSC-332-Project/report/report-10.png)
 
-[Project Design](https://raw.githubusercontent.com/hho114/CSUF-CPSC-332-Project/report/report-11.png)
+![Project Design](https://raw.githubusercontent.com/hho114/CSUF-CPSC-332-Project/report/report-11.png)
 
-[Project Design](https://raw.githubusercontent.com/hho114/CSUF-CPSC-332-Project/report/report-12.png)
+![Project Design](https://raw.githubusercontent.com/hho114/CSUF-CPSC-332-Project/report/report-12.png)
 
 
 
