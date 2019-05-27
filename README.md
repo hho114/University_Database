@@ -10,8 +10,5 @@ Caesar Mier caesarmier@csu.fullerton.edu
 
 [Link to team website project ](http://bit.ly/2Pe7P4u "CPSC 332 Project")
 
-Example input:
 
-For Professor: SSN [122039736], Course Number [CPSC 332], Section Number [13661]
-
-For Student: Course number [CPSC 335], Student CWID [123456789]
+![](332 Project Report-02.png)
